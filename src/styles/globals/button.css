@@ -1,0 +1,19 @@
+.btn-primary {
+  --bs-btn-bg: var(--clr-btn-bg-primary);
+  --bs-btn-color: var(--clr-text-dark);
+  --bs-btn-border-color: var(--clr-btn-border);
+}
+
+.btn-primary:hover {
+  --bs-btn-hover-color: var(--clr-text-light);
+  --bs-btn-hover-bg: var(--clr-btn-hover-bg);
+  --bs-btn-hover-border-color: var(--clr-btn-hover-border);
+}
+
+.btn-primary:hover path {
+  fill: var(--clr-cart);
+}
+
+.btn:hover input {
+  color: var(--clr-text-light);
+}

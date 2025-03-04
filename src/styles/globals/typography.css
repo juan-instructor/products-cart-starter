@@ -1,0 +1,8 @@
+body {
+  --ff: "Red Hat Text", serif;
+  font-family: var(--ff);
+}
+
+.fs-7 {
+  font-size: 0.875rem;
+}

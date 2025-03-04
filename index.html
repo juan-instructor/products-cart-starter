@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- TODO: change image alt tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <meta name="rating" content="General" />
+    <meta name="expires" content="never" />
+    <meta name="language" content="English, EN" />
+    <meta
+      name="description"
+      content="One of the best desserts in the community"
+    />
+    <meta name="keywords" content="desserts, dessert, community, local" />
+
+    <script type="module" src="/src/app.js"></script>
+    <title>Products & Cart</title>
+  </head>
+
+  <!-- I modified .text-primary class from bootstrap in typography and colors -->
+  <body class="text-primary">
+    <!-- START OF BOOTSTRAP NAVBAR -->
+
+    <!-- https://getbootstrap.com/docs/5.3/components/navbar/#brand -->
+    <!-- I did some minor adjustments -->
+    <nav
+      class="navbar navbar-expand-lg bg-body-secondary"
+      data-bs-theme="light"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand fs-2" href="/">Dessert Company</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- END OF BOOTSTRAP NAVBAR -->
+    <div class="container d-lg-flex justify-content-between" data-js="menu">
+      <section class="pt-4 mw-lg">
+        <h2 class="mb-3 fw-bold display-6">Desserts</h2>
+
+        <!-- col-<number> adjusts the width of each column -->
+        <!-- or row row-cols-<width> creates a grid from the parent container  -->
+        <!-- use responsive class like .sm or .md -->
+
+        <!-- gutter-y axis -->
+        <ul
+          role="list"
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-gap-2"
+        >
+          <li data-product-id="01">
+            <!-- <article>Waffle with Berries Waffle 6.50 Add to Cart</article> -->
+            <article class="d-flex flex-column-reverse">
+              <header class="d-flex flex-column gap-1">
+                <span class="fs-7 text-label" aria-hidden="true">Waffle</span>
+                <h3
+                  class="fw-semibold fs-6"
+                  data-item-name="waffle with berries"
+                >
+                  Waffle with Berries
+                </h3>
+                <p class="fs-7 fw-bold text-accent">
+                  $<data data-item-price="6.50" value="6.50">6.50</data>
+                </p>
+              </header>
+              <div class="mb-3">
+                <picture>
+                  <source
+                    media="(min-width: 56.25em)"
+                    srcset="/src/assets/images/image-waffle-tablet.jpg"
+                  />
+
+                  <img
+                    class="rounded"
+                    src="/src/assets/images/image-waffle-mobile.jpg"
+                    alt="super delicious waffle"
+                  />
+                </picture>
+
+                <!-- mt-n2 (negative margin) as per 
+              bootstrap docs it will not work as we need sass to customize bootstrap
+              and turn this feature on
+              -->
+
+                <!-- this should be triggered as active when clicked to show add or remove buttons  -->
+
+                <!-- TODO: come back to why margin-top alone makes the element sit behind ? -->
+                <!-- TODO: change :active and :focus-visible styles -->
+                <button
+                  class="btn btn-primary rounded-pill d-block ms-auto me-auto mt-n1 position-relative mt-n2 fw-semibold px-3"
+                  type="button"
+                  aria-label="add to cart"
+                  aria-controls="adjust-cart-waffle-berries"
+                  data-btn="show-cart-controller"
+                >
+                  <!-- svg icon add to cart -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    viewBox="0 0 21 20"
+                  >
+                    <g fill="#C73B0F" clip-path="url(#a)">
+                      <path
+                        d="M6.583 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM15.334 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM3.446 1.752a.625.625 0 0 0-.613-.502h-2.5V2.5h1.988l2.4 11.998a.625.625 0 0 0 .612.502h11.25v-1.25H5.847l-.5-2.5h11.238a.625.625 0 0 0 .61-.49l1.417-6.385h-1.28L16.083 10H5.096l-1.65-8.248Z"
+                      />
+                      <path
+                        d="M11.584 3.75v-2.5h-1.25v2.5h-2.5V5h2.5v2.5h1.25V5h2.5V3.75h-2.5Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="a">
+                        <path fill="#fff" d="M.333 0h20v20h-20z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Add to Cart
+                </button>
+
+                <!-- OUR HIDDEN BUTTTON TO ADD AND REMOVE ITEMS -->
+                <div
+                  id="adjust-cart-waffle-berries"
+                  class="d-none btn btn-primary rounded-pill mt-n1 position-relative ms-auto me-auto w-max-content"
+                  data-cart="cart-add-remove"
+                >
+                  <button
+                    class="btn-primary border-transparent bg-transparent"
+                    type="button"
+                    aria-label="Remove 1"
+                    data-btn="decrease-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="2"
+                      viewBox="0 0 10 2"
+                    >
+                      <path fill="#C73B0F" d="M0 .375h10v1.25H0V.375Z" />
+                    </svg>
+                  </button>
+                  <label class="visually-hidden" for="input-add"
+                    >add or remove from cart</label
+                  >
+                  <!-- TODO: change :active, :focus and :focus visible classes -->
+                  <!-- Go to bootstrap focus section: https://getbootstrap.com/docs/5.3/helpers/focus-ring/ -->
+                  <input
+                    class="btn btn-primary input-appearance-none bg-transparent border-transparent"
+                    type="number"
+                    min="1"
+                    max="99"
+                    id="input-add"
+                    name="input-add"
+                    aria-live="polite"
+                    value="1"
+                    data-input="cart-input"
+                  /><button
+                    class="btn-primary border-transparent bg-transparent"
+                    type="button"
+                    aria-label="Add 1"
+                    data-btn="add-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      fill="none"
+                      viewBox="0 0 10 10"
+                    >
+                      <path
+                        fill="#C73B0F"
+                        d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li data-product-id="02">
+            <article class="d-flex flex-column-reverse">
+              <header class="d-flex flex-column gap-1">
+                <span class="fs-7 text-label" aria-hidden="true"
+                  >Crème Brûlée</span
+                >
+                <h3
+                  class="fw-semibold fs-6"
+                  data-item-name="vanilla bean creme brulee"
+                >
+                  Vanilla Bean Crème Brûlée
+                </h3>
+                <p class="fs-7 fw-bold text-accent">
+                  $<data data-item-price="7" value="7.00">7.00</data>
+                </p>
+              </header>
+              <div class="mb-3">
+                <picture>
+                  <source
+                    media="(min-width: 56.25em)"
+                    srcset="/src/assets/images/image-creme-brulee-tablet.jpg"
+                  />
+
+                  <img
+                    class="rounded"
+                    src="/src/assets/images/image-creme-brulee-mobile.jpg"
+                    alt="super delicious waffle"
+                  />
+                </picture>
+
+                <button
+                  class="btn btn-primary rounded-pill d-block ms-auto me-auto position-relative mt-n1 fw-semibold px-3"
+                  type="button"
+                  aria-controls="adjust-cart-vanilla-creme-brulee"
+                  data-btn="show-cart-controller"
+                >
+                  <!-- svg icon add to cart -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    viewBox="0 0 21 20"
+                  >
+                    <g fill="#C73B0F" clip-path="url(#a)">
+                      <path
+                        d="M6.583 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM15.334 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM3.446 1.752a.625.625 0 0 0-.613-.502h-2.5V2.5h1.988l2.4 11.998a.625.625 0 0 0 .612.502h11.25v-1.25H5.847l-.5-2.5h11.238a.625.625 0 0 0 .61-.49l1.417-6.385h-1.28L16.083 10H5.096l-1.65-8.248Z"
+                      />
+                      <path
+                        d="M11.584 3.75v-2.5h-1.25v2.5h-2.5V5h2.5v2.5h1.25V5h2.5V3.75h-2.5Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="a">
+                        <path fill="#fff" d="M.333 0h20v20h-20z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Add to Cart
+                </button>
+                <div
+                  id="adjust-cart-vanilla-creme-brulee"
+                  class="d-none"
+                  data-cart="cart-add-remove"
+                >
+                  <button
+                    class=""
+                    type="button"
+                    aria-label="Remove 1"
+                    data-btn="decrease-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="2"
+                      fill="none"
+                      viewBox="0 0 10 2"
+                    >
+                      <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
+                    </svg>
+                  </button>
+                  <label class="visually-hidden" for="input-add"
+                    >add or remove from cart</label
+                  >
+                  <input
+                    class="input-appearance-none"
+                    type="number"
+                    min="1"
+                    max="99"
+                    id="input-add"
+                    name="input-add"
+                    aria-live="polite"
+                    value="1"
+                    data-input="cart-input"
+                  /><button
+                    class=""
+                    type="button"
+                    aria-label="Add 1"
+                    data-btn="add-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      fill="none"
+                      viewBox="0 0 10 10"
+                    >
+                      <path
+                        fill="#fff"
+                        d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li data-product-id="03">
+            <article class="d-flex flex-column-reverse">
+              <header class="d-flex flex-column gap-1">
+                <span class="fs-7 text-label" aria-hidden="true">Macaron</span>
+                <h3
+                  class="fw-semibold fs-6"
+                  data-item-name="macaron mix of five"
+                >
+                  Macaron Mix of Five
+                </h3>
+                <p class="fs-7 fw-bold text-accent">
+                  $<data data-item-price="8" value="8">8.00</data>
+                </p>
+              </header>
+              <div class="mb-3">
+                <picture>
+                  <source
+                    media="(min-width: 56.25em)"
+                    srcset="/src/assets/images/image-macaron-tablet.jpg"
+                  />
+
+                  <img
+                    class="rounded"
+                    src="/src/assets/images/image-macaron-mobile.jpg"
+                    alt="super delicious waffle"
+                  />
+                </picture>
+
+                <button
+                  class="btn btn-primary rounded-pill d-block ms-auto me-auto position-relative mt-n1 fw-semibold px-3"
+                  type="button"
+                  aria-controls="adjust-cart-maxaron-mix-of-five"
+                  data-btn="show-cart-controller"
+                >
+                  <!-- svg icon add to cart -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    viewBox="0 0 21 20"
+                  >
+                    <g fill="#C73B0F" clip-path="url(#a)">
+                      <path
+                        d="M6.583 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM15.334 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM3.446 1.752a.625.625 0 0 0-.613-.502h-2.5V2.5h1.988l2.4 11.998a.625.625 0 0 0 .612.502h11.25v-1.25H5.847l-.5-2.5h11.238a.625.625 0 0 0 .61-.49l1.417-6.385h-1.28L16.083 10H5.096l-1.65-8.248Z"
+                      />
+                      <path
+                        d="M11.584 3.75v-2.5h-1.25v2.5h-2.5V5h2.5v2.5h1.25V5h2.5V3.75h-2.5Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="a">
+                        <path fill="#fff" d="M.333 0h20v20h-20z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Add to Cart
+                </button>
+                <div
+                  id="adjust-cart-maxaron-mix-of-five"
+                  class="d-none"
+                  data-cart="cart-add-remove"
+                >
+                  <button
+                    class=""
+                    type="button"
+                    aria-label="Remove 1"
+                    data-btn="decrease-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="2"
+                      fill="none"
+                      viewBox="0 0 10 2"
+                    >
+                      <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
+                    </svg>
+                  </button>
+                  <label class="visually-hidden" for="input-add"
+                    >add or remove from cart</label
+                  >
+                  <input
+                    class="input-appearance-none"
+                    type="number"
+                    min="1"
+                    max="99"
+                    id="input-add"
+                    name="input-add"
+                    aria-live="polite"
+                    value="1"
+                    data-input="cart-input"
+                  /><button
+                    class=""
+                    type="button"
+                    aria-label="Add 1"
+                    data-btn="add-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      fill="none"
+                      viewBox="0 0 10 10"
+                    >
+                      <path
+                        fill="#fff"
+                        d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li data-product-id="04">
+            <article class="d-flex flex-column-reverse">
+              <header class="d-flex flex-column gap-1">
+                <span class="fs-7 text-label" aria-hidden="true">Tiramisu</span>
+                <h3 class="fw-semibold fs-6" data-item-name="classic tiramisu">
+                  Classic Tiramisu
+                </h3>
+                <p class="fs-7 fw-bold text-accent">
+                  $<data data-item-price="5.50" value="5.50">5.50</data>
+                </p>
+              </header>
+              <div class="mb-3">
+                <picture>
+                  <source
+                    media="(min-width: 56.25em)"
+                    srcset="/src/assets/images/image-tiramisu-tablet.jpg"
+                  />
+
+                  <img
+                    class="rounded"
+                    src="/src/assets/images/image-tiramisu-mobile.jpg"
+                    alt="super delicious waffle"
+                  />
+                </picture>
+
+                <button
+                  class="btn btn-primary rounded-pill d-block ms-auto me-auto position-relative mt-n1 fw-semibold px-3"
+                  type="button"
+                  aria-controls="adjust-cart-classic-tiramisu"
+                  data-btn="show-cart-controller"
+                >
+                  <!-- svg icon add to cart -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    fill="none"
+                    viewBox="0 0 21 20"
+                  >
+                    <g fill="#C73B0F" clip-path="url(#a)">
+                      <path
+                        d="M6.583 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM15.334 18.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM3.446 1.752a.625.625 0 0 0-.613-.502h-2.5V2.5h1.988l2.4 11.998a.625.625 0 0 0 .612.502h11.25v-1.25H5.847l-.5-2.5h11.238a.625.625 0 0 0 .61-.49l1.417-6.385h-1.28L16.083 10H5.096l-1.65-8.248Z"
+                      />
+                      <path
+                        d="M11.584 3.75v-2.5h-1.25v2.5h-2.5V5h2.5v2.5h1.25V5h2.5V3.75h-2.5Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="a">
+                        <path fill="#fff" d="M.333 0h20v20h-20z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Add to Cart
+                </button>
+                <div
+                  id="adjust-cart-classic-tiramisu"
+                  class="d-none"
+                  data-cart="cart-add-remove"
+                >
+                  <button
+                    class=""
+                    type="button"
+                    aria-label="Remove 1"
+                    data-btn="decrease-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="2"
+                      fill="none"
+                      viewBox="0 0 10 2"
+                    >
+                      <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
+                    </svg>
+                  </button>
+                  <label class="visually-hidden" for="input-add"
+                    >add or remove from cart</label
+                  >
+                  <input
+                    class="input-appearance-none"
+                    type="number"
+                    min="1"
+                    max="99"
+                    id="input-add"
+                    name="input-add"
+                    aria-live="polite"
+                    value="1"
+                    data-input="cart-input"
+                  /><button
+                    class=""
+                    type="button"
+                    aria-label="Add 1"
+                    data-btn="add-cart"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      fill="none"
+                      viewBox="0 0 10 10"
+                    >
+                      <path
+                        fill="#fff"
+                        d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+      <section class="pt-5 px-3 px-lg-5 flex-grow-1">
+        <h2
+          class="text-accent text-sm-center text-lg-start fs-4 fw-semibold mb-5"
+        >
+          Your Cart (<span
+            ><data data-total-cart-items="0" value="0">0</data></span
+          >)
+        </h2>
+        <div data-cart-empty="true">
+          <!-- TODO: Adjust alt tags -->
+          <img
+            class="mx-sm-auto"
+            src="src/assets/images/illustration-empty-cart.svg"
+            alt="empty card"
+          />
+          <p class="text-sm-center">Your added items will appear here</p>
+        </div>
+        <ul role="list" data-cart="list"></ul>
+      </section>
+    </div>
+  </body>
+</html>
